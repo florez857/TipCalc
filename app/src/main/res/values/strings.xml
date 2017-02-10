@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TipCalc</string>
+    <string name="Txv_hint_propina">Propina</string>
+    <string name="Txv_hint_porcentaje">% de propina</string>
+    <string name="Btn_incrementar">+</string>
+    <string name="Btn_decrementar">-</string>
+    <string name="Btn_calcular">calcular</string>
+    <string name="Btn_borrar">Borrar</string>
+
 </resources>

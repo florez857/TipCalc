@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -10,8 +12,94 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.pc.tipcalc.MainActivity">
 
-    <TextView
+
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:inputType="numberDecimal"
+        android:id="@+id/propina"
+        android:layout_margin="16dp"
+        android:ems="5"
+        tools:ignore="MissingConstraints"
+        android:hint="@string/Txv_hint_propina"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
+
+    <EditText
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/porcentaje"
+        android:hint="@string/Txv_hint_propina"
+        android:ems="5"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/propina" />
+
+    <Button
+        android:text="@string/Btn_borrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/borrar"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/porcentaje" />
+
+    <Button
+        android:text="@string/Btn_calcular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calcular"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/propina"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:text="@string/Btn_incrementar"
+        android:id="@+id/aumentar"
+        style="@style/Widget.AppCompat.Button.Small"
+        app:layout_constraintLeft_toRightOf="@+id/porcentaje"
+        app:layout_constraintTop_toBottomOf="@+id/calcular"
+        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        app:layout_constraintHorizontal_bias="0.7"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp" />
+
+    <Button
+        android:text="@string/Btn_decrementar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        style="@style/Widget.AppCompat.Button.Small"
+        app:layout_constraintTop_toBottomOf="@+id/calcular"
+        app:layout_constraintLeft_toRightOf="@+id/aumentar"
+        app:layout_constraintRight_toRightOf="@+id/calcular" />
+
+
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/borrar"
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp" />
+       <!-- app:layout_constraintTop_toBottomOf="@+id/view"!-->
+
+
+
+</android.support.constraint.ConstraintLayout>
