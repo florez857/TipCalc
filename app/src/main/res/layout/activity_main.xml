@@ -14,32 +14,39 @@
 
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
         android:id="@+id/propina"
         android:layout_margin="16dp"
-        android:ems="5"
+
         tools:ignore="MissingConstraints"
         android:hint="@string/Txv_hint_propina"
-        android:layout_marginTop="24dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="16dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginLeft="16dp" />
-
-    <EditText
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/porcentaje"
-        android:hint="@string/Txv_hint_propina"
-        android:ems="5"
+        app:layout_constraintRight_toLeftOf="@+id/calcular"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/propina" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/porcentaje"
+        android:hint="@string/Txv_hint_propina"
+
+        android:layout_marginStart="16dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/propina"
+        app:layout_constraintRight_toLeftOf="@+id/aumentar"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.62" />
 
     <Button
         android:text="@string/Btn_borrar"
@@ -57,23 +64,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/calcular"
-        android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/propina"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        tools:layout_editor_absoluteX="242dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:text="@string/Btn_incrementar"
         android:id="@+id/aumentar"
         style="@style/Widget.AppCompat.Button.Small"
-        app:layout_constraintLeft_toRightOf="@+id/porcentaje"
-        app:layout_constraintTop_toBottomOf="@+id/calcular"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        app:layout_constraintHorizontal_bias="0.7"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp" />
+        app:layout_constraintLeft_toLeftOf="@+id/calcular"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/calcular" />
 
     <Button
         android:text="@string/Btn_decrementar"
@@ -81,9 +84,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/button"
         style="@style/Widget.AppCompat.Button.Small"
-        app:layout_constraintTop_toBottomOf="@+id/calcular"
-        app:layout_constraintLeft_toRightOf="@+id/aumentar"
-        app:layout_constraintRight_toRightOf="@+id/calcular" />
+        app:layout_constraintRight_toRightOf="@+id/calcular"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/calcular" />
 
 
 
@@ -100,6 +103,23 @@
         android:layout_marginLeft="16dp" />
        <!-- app:layout_constraintTop_toBottomOf="@+id/view"!-->
 
+   <fragment
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:name="com.fragmen.FragmentTipCalc"
 
+       android:id="@+id/fragmentList"
+       tools:layout="@layout/fragment_fragment_tip_calc"
+       app:layout_constraintTop_toBottomOf="@+id/textView"
+       android:layout_marginTop="16dp"
+       android:layout_marginStart="16dp"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:layout_marginLeft="16dp"
+       android:layout_marginEnd="16dp"
+       app:layout_constraintRight_toRightOf="parent"
+       android:layout_marginRight="16dp">
+
+
+   </fragment>
 
 </android.support.constraint.ConstraintLayout>

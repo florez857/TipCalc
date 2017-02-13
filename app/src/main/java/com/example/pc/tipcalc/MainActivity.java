@@ -15,10 +15,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.fragmen.FragmentTipCalc;
+import com.fragmen.fragmentInterface;
+
 import static com.example.pc.tipcalc.R.id.propina;
 
 public class MainActivity extends AppCompatActivity {
-
+    private fragmentInterface fragment;
     private Button incrementar,decrementar,borrar,calcular;
     private EditText total,porcentaje;
     private TextView monto;
@@ -47,8 +50,9 @@ public class MainActivity extends AppCompatActivity {
                         });
         builder.create();
 
-
-
+         FragmentTipCalc fragmento=(FragmentTipCalc)getSupportFragmentManager().findFragmentById(R.id.fragmentList);
+         fragmento.setRetainInstance(true);
+         fragment=(fragmentInterface)fragmento;
 
 
 
@@ -90,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
            Double pagar=  Double.valueOf( montoPagar.trim());
            Double total=(getPorcentaje()*pagar)/100;
            monto.setText(total.toString());
+           fragment.action(total.toString());
            Log.d("salida de datos",total.toString());
            monto.setVisibility(View.VISIBLE);
        } else {
