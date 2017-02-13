@@ -5,6 +5,9 @@ package com.fragmen;
  */
 
 public interface fragmentInterface {
-    void action(String str);
+    //void action(String str);
+
+    void addList();
+    void clearList();
 
 }
